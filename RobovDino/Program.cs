@@ -12,7 +12,13 @@ namespace RobovDino
         {
             Fleet fleet = new Fleet();
             Herd herd = new Herd();
-            herd.VerifyChoiceMessageDino(1);
+            Battlefield bF = new Battlefield();
+
+            bF.ChooseWhoToAttack();
+
+
+
+            //herd.VerifyChoiceMessageDino(1);
             //fleet.VerifyChoiceMessageRobo(1);
             Console.ReadLine();
             

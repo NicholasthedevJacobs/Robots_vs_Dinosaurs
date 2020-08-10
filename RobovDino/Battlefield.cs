@@ -13,34 +13,34 @@ namespace RobovDino
 
         public Battlefield()
         {
-            Fleet theFleet = new Fleet();
-            Herd theHerd = new Herd();
+            theFleet = new Fleet();
+            theHerd = new Herd();
 
             
         }
 
 
         //member methods
-        public string ChooseWhoToAttack()
+        public int ChooseWhoToAttack()
         {
-            
+            //int defenderChoice = 0;
             if (theFleet.DisplayRobotInfo() == 0 || theFleet.DisplayRobotInfo() == 1 || theFleet.DisplayRobotInfo() == 2)
             {
                 Console.WriteLine(theHerd.DisplayDinoInfo());
-                string defenderChoice = Console.ReadLine();
+                int defenderChoice = int.Parse(Console.ReadLine());
                 return defenderChoice;
             }
             else
             {
                 Console.WriteLine(theFleet.DisplayRobotInfo());
-                string defenderChoice = Console.ReadLine();
+                int defenderChoice = int.Parse(Console.ReadLine());
                 return defenderChoice;
             }
         }
-        public int Attack()
-        {
-            int someVariable = TheHerd.DisplayDinoInfo();
-            TheFleet.theFleet[someVariable].Attack(TheHerd.theHerd[0]);
-        }
+        //public int Attack()
+        //{
+        //    int someVariable = TheHerd.DisplayDinoInfo();
+        //    TheFleet.theFleet[someVariable].Attack(TheHerd.theHerd[0]);
+        //}
     }
 }

@@ -9,7 +9,7 @@ namespace RobovDino
     class Fleet
     {
         //member variables
-        public Dinosaur dinosaur;
+        //public Dinosaur dinosaur;
         public List<Robot> theFleet;
         
 
