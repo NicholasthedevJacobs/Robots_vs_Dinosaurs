@@ -20,7 +20,10 @@ namespace RobovDino
 
         public Dinosaur(string type, int health, int energy, int attackPower)
         {
-            Dinosaur dinosaur = new Dinosaur(type, health, energy, attackPower);
+            this.type = type;
+            this.health = health;
+            this.energy = energy;
+            this.attackPower = attackPower;
 
         }
         //member methods

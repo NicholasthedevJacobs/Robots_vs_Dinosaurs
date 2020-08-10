@@ -10,6 +10,12 @@ namespace RobovDino
     {
         static void Main(string[] args)
         {
+            Fleet fleet = new Fleet();
+            Herd herd = new Herd();
+            herd.VerifyChoiceMessageDino(1);
+            //fleet.VerifyChoiceMessageRobo(1);
+            Console.ReadLine();
+            
         }
     }
 }

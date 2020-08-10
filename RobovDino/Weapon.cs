@@ -8,5 +8,14 @@ namespace RobovDino
 {
     class Weapon
     {
+        public string weapon;
+
+
+        public Weapon()
+        {
+           
+
+        }
+
     }
 }

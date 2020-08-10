@@ -10,10 +10,10 @@ namespace RobovDino
     {
         public Fleet TheFleet;
         public Herd TheHerd;
-        public int Attack()
-        {
-            int someVariable = TheHerd.DisplayDinoInfo();
-            TheFleet.theFleet[someVariable].Attack(TheHerd.theHerd[0]);
-        }
+        //public int Attack()
+        //{
+        //    int someVariable = TheHerd.DisplayDinoInfo();
+        //    TheFleet.theFleet[someVariable].Attack(TheHerd.theHerd[0]);
+        //}
     }
 }

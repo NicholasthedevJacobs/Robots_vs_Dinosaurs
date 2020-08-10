@@ -20,10 +20,15 @@ namespace RobovDino
 
         public Robot(string name, int health, int powerLevel, Weapon weapon)
         {
-            Robot robot = new Robot(name, health, powerLevel, weapon);
-            //Weapon particleCannon = new Weapon();
-            //Weapon antiLizardSpray = new Weapon();
-            //Weapon freshMeat = new Weapon();
+            this.name = name;
+            this.health = health;
+            this.powerLevel = powerLevel;
+            
+
+            //Robot robot = new Robot(name, health, powerLevel, weapon);
+            Weapon particleCannon = new Weapon();
+            Weapon antiLizardSpray = new Weapon();
+            Weapon freshMeat = new Weapon();
         }
         //member methods
 
