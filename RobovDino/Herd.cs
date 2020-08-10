@@ -41,8 +41,7 @@ namespace RobovDino
             Console.WriteLine("  --------------------------");
             return int.Parse(Console.ReadLine()) -1;
 
-           // Dinosaur AttackingDino = theHerd[userInput - 1];
-
+          
         }
         public void VerifyChoiceMessageDino(int name)
         {
