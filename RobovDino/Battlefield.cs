@@ -8,5 +8,9 @@ namespace RobovDino
 {
     class Battlefield
     {
+        public int Attack()
+        {
+
+        }
     }
 }

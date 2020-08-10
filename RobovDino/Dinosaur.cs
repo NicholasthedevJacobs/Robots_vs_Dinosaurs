@@ -10,22 +10,24 @@ namespace RobovDino
     {
         //member variables
 
-        Dinosaur dino;
-        string type;
-        int health;
-        int energy;
-        int attackPower;
+        
+        public string type;
+        public int health;
+        public int energy;
+        public int attackPower;
 
         //constructor
 
         public Dinosaur(string type, int health, int energy, int attackPower)
         {
-            Dinosaur wetnosaur = new Dinosaur("Wetnosaur", 100, 25, 150);
-            Dinosaur chomposaur = new Dinosaur("Chomposaur", 300, 40, 60);
-            Dinosaur kraken = new Dinosaur("Kraken", 150, 30, 120);
+            Dinosaur dinosaur = new Dinosaur(type, health, energy, attackPower);
+
         }
         //member methods
+        public void AttackRobot()
+        {
 
+        }
 
 
     }
