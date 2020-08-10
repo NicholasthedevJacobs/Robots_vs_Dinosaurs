@@ -25,14 +25,18 @@ namespace RobovDino
         }
 
         //member methods
-        public string ChooseDinoToUse()
+        public int DisplayDinoInfo()
         {
-            string dinosaurChoice;
-            Console.WriteLine("Commander, choose your Dinosaur Warrior!: ");
-            dinosaurChoice = Console.ReadLine();
-            return dinosaurChoice;
+            Console.WriteLine("Press 1: to choose " + theHerd[0].type);
+            Console.WriteLine("Press 2: to choose " + theHerd[1].type);
+            Console.WriteLine("Press 3: to choose " + theHerd[2].type);
+           return int.Parse(Console.ReadLine()) -1;
+
+           // Dinosaur AttackingDino = theHerd[userInput - 1];
+
         }
-        public void FindDino(List<Dinosaur> name)
+       
+        public void FindDino(string name)
         {
             for (int i = 0; i <= 3; i++)
             {
@@ -47,5 +51,13 @@ namespace RobovDino
         {
 
         }
+        //public Dinosaur ChooseDinoToUse()
+        //{   
+        //      ~~***Became unneccesary, but keeping for now as reference***~~
+        //    Console.WriteLine("Commander, choose your Dinosaur Warrior!: ");
+        //    int userInput = DisplayDinoInfo();
+        //    Dinosaur AttackingDino = theHerd[userInput - 1];
+        //    return AttackingDino;
+        //}
     }
 }
