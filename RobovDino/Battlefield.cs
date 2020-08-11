@@ -29,6 +29,10 @@ namespace RobovDino
         //member methods
         public void DoBattle() // "master" method
         {
+            if (theHerd.theHerd.Count == 0 || theFleet.theFleet.Count == 0)
+            {
+                Console.WriteLine("Game over!");
+            }
             while (theHerd.theHerd.Count > 0 && theFleet.theFleet.Count > 0)
             {
                 ChooseWhoToAttackRobotPlayer();
@@ -42,6 +46,7 @@ namespace RobovDino
             {
                 Console.WriteLine("Game over!");
             }
+
             // call your method that lets a robo attack a dino
             // call your check it dead
 
@@ -136,13 +141,13 @@ namespace RobovDino
         }
         public void IsDeadCheck()
         {
-            if (theHerd.theHerd[currentDinoDefenderIndex].health >= 0)
+            if (theHerd.theHerd[currentDinoDefenderIndex].health <= 0)
             {
                 Console.WriteLine($"WHAM!! {theHerd.theHerd[currentDinoDefenderIndex]} is Knocked Out!!;");
                 theHerd.theHerd.RemoveAt(currentDinoDefenderIndex);
                 
             }
-            else if (theFleet.theFleet[currentRobotDefenderIndex].health >= 0)
+            else if (theFleet.theFleet[currentRobotDefenderIndex].health <= 0)
             {
                 Console.WriteLine($"WHAM!! {theFleet.theFleet[currentRobotDefenderIndex]} is Knocked Out!!;");
                 theFleet.theFleet.RemoveAt(currentRobotDefenderIndex);
@@ -155,7 +160,11 @@ namespace RobovDino
             {
                 Console.WriteLine(theFleet.theFleet[currentRobotDefenderIndex].health);
             }
-
+            else
+            {
+                //Console.WriteLine("Game over");
+            }
+           
         }
 
     }
