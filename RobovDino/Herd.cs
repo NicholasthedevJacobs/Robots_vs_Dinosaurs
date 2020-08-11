@@ -27,6 +27,7 @@ namespace RobovDino
         //member methods
         public int DisplayDinoInfo()
         {
+            //Console.WriteLine("Choose your attacker!");
             Console.WriteLine("Press 1: to choose " + theHerd[0].type);
             Console.Write("HEALTH: " + theHerd[0].health + " ");
             Console.WriteLine("ATTACK POWER: " + theHerd[0].attackPower);
@@ -43,35 +44,15 @@ namespace RobovDino
 
           
         }
-        public void VerifyChoiceMessageDino(int name)
+        public void VerifyChoiceMessageDino(int nameOfChosenDino)
         {
-            int nameOfChosenDino = DisplayDinoInfo();
+            //int nameOfChosenDino = DisplayDinoInfo();
             Console.WriteLine($"Great choice commander! You have chosen the {theHerd[nameOfChosenDino].type}!");
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
-        //public void FindDino(string name)
-        //{
-        //    for (int i = 0; i <= 3; i++)
-        //    {
-        //        if (theHerd[i].type == )
-        //        {
-
-        //        }
-        //    }
-
-        //}
-        public void ChooseRobotEnemy(string name)
-        {
-
-        }
-        //public Dinosaur ChooseDinoToUse()
-        //{   
-        //      ~~***Became unneccesary, but keeping for now as reference***~~
-        //    Console.WriteLine("Commander, choose your Dinosaur Warrior!: ");
-        //    int userInput = DisplayDinoInfo();
-        //    Dinosaur AttackingDino = theHerd[userInput - 1];
-        //    return AttackingDino;
-        //}
+        
+        
+        
     }
 }

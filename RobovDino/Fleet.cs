@@ -29,6 +29,7 @@ namespace RobovDino
         //member methods
         public int DisplayRobotInfo()
         {
+            //Console.WriteLine("Choose your attacker!");
             Console.WriteLine("Press 1: to choose " + theFleet[0].name);
             Console.Write("HEALTH: " + theFleet[0].health + " ");
             Console.WriteLine("ATTACK POWER: " + theFleet[0].powerLevel);
@@ -43,14 +44,14 @@ namespace RobovDino
             Console.WriteLine("  --------------------------");
             return int.Parse(Console.ReadLine()) - 1;
 
-            // Dinosaur AttackingDino = theHerd[userInput - 1];
+          
 
         }
-        public void VerifyChoiceMessageRobo(int name)
+        public void VerifyChoiceMessageRobo(int nameOfChosenRobot)
         {
-            int nameOfChosenRobot = DisplayRobotInfo();
+            
             Console.WriteLine($"Great choice commander, you have chosen {theFleet[nameOfChosenRobot].name}: ");
-            Console.ReadLine();
+            //Console.ReadLine();
         }
         public void ChooseDinosaurEnemy(string name)
         {

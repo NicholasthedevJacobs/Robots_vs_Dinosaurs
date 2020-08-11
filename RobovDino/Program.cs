@@ -10,11 +10,12 @@ namespace RobovDino
     {
         static void Main(string[] args)
         {
-            Fleet fleet = new Fleet();
-            Herd herd = new Herd();
+            //Fleet fleet = new Fleet();
+            //Herd herd = new Herd();
             Battlefield bF = new Battlefield();
-
-            bF.ChooseWhoToAttack();
+            bF.DoBattle();
+            
+            // bF.ChooseWhoToAttackRobotPlayer();
 
 
 
