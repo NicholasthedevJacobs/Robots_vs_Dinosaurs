@@ -30,18 +30,28 @@ namespace RobovDino
         public int DisplayRobotInfo()
         {
             //Console.WriteLine("Choose your attacker!");
-            Console.WriteLine("Press 1: to choose " + theFleet[0].name);
-            Console.Write("HEALTH: " + theFleet[0].health + " ");
-            Console.WriteLine("ATTACK POWER: " + theFleet[0].powerLevel);
-            Console.WriteLine("  --------------------------");
-            Console.WriteLine("Press 2: to choose " + theFleet[1].name);
-            Console.Write("HEALTH: " + theFleet[1].health + " ");
-            Console.WriteLine("ATTACK POWER: " + theFleet[1].powerLevel);
-            Console.WriteLine("  --------------------------");
-            Console.WriteLine("Press 3: to choose " + theFleet[2].name);
-            Console.Write("HEALTH: " + theFleet[2].health + " ");
-            Console.WriteLine("ATTACK POWER: " + theFleet[2].powerLevel);
-            Console.WriteLine("  --------------------------");
+            if (theFleet.Count > 0)
+            {
+                Console.WriteLine("Press 1: to choose " + theFleet[0].name);
+                Console.Write("HEALTH: " + theFleet[0].health + " ");
+                Console.WriteLine("ATTACK POWER: " + theFleet[0].powerLevel);
+                Console.WriteLine("  --------------------------");
+                if (theFleet.Count > 1)
+                {
+                    Console.WriteLine("Press 2: to choose " + theFleet[1].name);
+                    Console.Write("HEALTH: " + theFleet[1].health + " ");
+                    Console.WriteLine("ATTACK POWER: " + theFleet[1].powerLevel);
+                    Console.WriteLine("  --------------------------");
+                    if (theFleet.Count > 2)
+                    {
+                        Console.WriteLine("Press 3: to choose " + theFleet[2].name);
+                        Console.Write("HEALTH: " + theFleet[2].health + " ");
+                        Console.WriteLine("ATTACK POWER: " + theFleet[2].powerLevel);
+                        Console.WriteLine("  --------------------------");
+                    }
+                }
+            }
+           
             return int.Parse(Console.ReadLine()) - 1;
 
           

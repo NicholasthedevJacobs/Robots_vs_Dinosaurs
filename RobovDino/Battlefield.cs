@@ -29,15 +29,25 @@ namespace RobovDino
         //member methods
         public void DoBattle() // "master" method
         {
-            ChooseWhoToAttackRobotPlayer();
-            AttackDino();
-            IsDeadCheck();
+            while (theHerd.theHerd.Count > 0 && theFleet.theFleet.Count > 0)
+            {
+                ChooseWhoToAttackRobotPlayer();
+                AttackDino();
+                IsDeadCheck();
+                ChooseWhoToAttackDinoPlayer();
+                AttackRobot();
+                IsDeadCheck();
+            }
+            if (theHerd.theHerd.Count == 0 || theFleet.theFleet.Count == 0)
+            {
+                Console.WriteLine("Game over!");
+            }
             // call your method that lets a robo attack a dino
             // call your check it dead
 
-            ChooseWhoToAttackDinoPlayer();
-            AttackRobot();
-            IsDeadCheck();
+            //ChooseWhoToAttackDinoPlayer();
+            //AttackRobot();
+            //IsDeadCheck();
             // call your method that lets a dino attack a robo
             // call your check it dead
             //theHerd.theHerd[0].AttackRobot(theFleet.theFleet[0]);
@@ -97,49 +107,49 @@ namespace RobovDino
             }
         }
                 
-        public int AttackDino()
+        public void AttackDino()
         {
 
             if (theHerd.theHerd[currentDinoDefenderIndex].health > 0)
             {
                 theHerd.theHerd[currentDinoDefenderIndex].health -= theFleet.theFleet[currentRobotAttackerIndex].powerLevel;
-                return theHerd.theHerd[currentDinoDefenderIndex].health;
+                //return theHerd.theHerd[currentDinoDefenderIndex].health;
                 
             }   
             else
             {
-                return 0;
-            }
+                
+            }  
         }
-        public int AttackRobot()
+        public void AttackRobot()
         {
             if (theFleet.theFleet[currentRobotDefenderIndex].health > 0)
             {
                 theFleet.theFleet[currentRobotDefenderIndex].health -= theHerd.theHerd[currentDinoAttackerIndex].attackPower;
-                return theFleet.theFleet[currentRobotDefenderIndex].health;
+                //return theFleet.theFleet[currentRobotDefenderIndex].health;
                 
             }
             else
             {
-                return 0;
+                
             }
         }
         public void IsDeadCheck()
         {
-            if (theHerd.theHerd[currentDinoDefenderIndex].health <= 0)
+            if (theHerd.theHerd[currentDinoDefenderIndex].health >= 0)
             {
                 Console.WriteLine($"WHAM!! {theHerd.theHerd[currentDinoDefenderIndex]} is Knocked Out!!;");
                 theHerd.theHerd.RemoveAt(currentDinoDefenderIndex);
                 
             }
-            else if (theFleet.theFleet[currentRobotDefenderIndex].health <= 0)
+            else if (theFleet.theFleet[currentRobotDefenderIndex].health >= 0)
             {
                 Console.WriteLine($"WHAM!! {theFleet.theFleet[currentRobotDefenderIndex]} is Knocked Out!!;");
                 theFleet.theFleet.RemoveAt(currentRobotDefenderIndex);
             }
             else if (theHerd.theHerd[currentDinoDefenderIndex].health > 0)
             {
-                Console.WriteLine(theHerd.theHerd[currentDinoDefenderIndex].health);
+                Console.WriteLine($"The defenders health is now {theHerd.theHerd[currentDinoDefenderIndex].health}");
             }
             else if (theFleet.theFleet[currentRobotDefenderIndex].health > 0)
             {

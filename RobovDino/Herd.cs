@@ -28,21 +28,32 @@ namespace RobovDino
         public int DisplayDinoInfo()
         {
             //Console.WriteLine("Choose your attacker!");
-            Console.WriteLine("Press 1: to choose " + theHerd[0].type);
-            Console.Write("HEALTH: " + theHerd[0].health + " ");
-            Console.WriteLine("ATTACK POWER: " + theHerd[0].attackPower);
-            Console.WriteLine("  --------------------------");
-            Console.WriteLine("Press 2: to choose " + theHerd[1].type);
-            Console.Write("HEALTH: " + theHerd[1].health + " ");
-            Console.WriteLine("ATTACK POWER: " + theHerd[1].attackPower);
-            Console.WriteLine("  --------------------------");
-            Console.WriteLine("Press 3: to choose " + theHerd[2].type);
-            Console.Write("HEALTH: " + theHerd[2].health + " ");
-            Console.WriteLine("ATTACK POWER: " + theHerd[2].attackPower);
-            Console.WriteLine("  --------------------------");
-            return int.Parse(Console.ReadLine()) -1;
+            if (theHerd.Count > 0)
+            {
+                Console.WriteLine("Press 1: to choose " + theHerd[0].type);
+                Console.Write("HEALTH: " + theHerd[0].health + " ");
+                Console.WriteLine("ATTACK POWER: " + theHerd[0].attackPower);
+                Console.WriteLine("  --------------------------");
+                if (theHerd.Count > 1)
+                {
+                    Console.WriteLine("Press 2: to choose " + theHerd[1].type);
+                    Console.Write("HEALTH: " + theHerd[1].health + " ");
+                    Console.WriteLine("ATTACK POWER: " + theHerd[1].attackPower);
+                    Console.WriteLine("  --------------------------");
+                    if (theHerd.Count > 2)
+                    {
+                        Console.WriteLine("Press 3: to choose " + theHerd[2].type);
+                        Console.Write("HEALTH: " + theHerd[2].health + " ");
+                        Console.WriteLine("ATTACK POWER: " + theHerd[2].attackPower);
+                        Console.WriteLine("  --------------------------");
+                    }
+                }
+            }
 
-          
+            return int.Parse(Console.ReadLine()) - 1;
+
+
+
         }
         public void VerifyChoiceMessageDino(int nameOfChosenDino)
         {
@@ -51,8 +62,17 @@ namespace RobovDino
             //Console.ReadLine();
         }
 
-        
-        
-        
+                
     }
 }
+                
+
+
+
+                   
+
+
+
+
+
+                   
