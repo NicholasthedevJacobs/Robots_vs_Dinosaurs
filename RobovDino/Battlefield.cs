@@ -11,10 +11,11 @@ namespace RobovDino
     {
         public Fleet theFleet;
         public Herd theHerd;
-        int currentRobotAttackerIndex;
-        int currentRobotDefenderIndex;
-        int currentDinoAttackerIndex;
-        int currentDinoDefenderIndex;
+        int currentRobotAttackerIndex = 0;
+        int currentRobotDefenderIndex = 0;
+        int currentDinoAttackerIndex = 0;
+        int currentDinoDefenderIndex = 0;
+        
 
         public Battlefield()
         {
@@ -28,24 +29,22 @@ namespace RobovDino
         //member methods
         public void DoBattle() // "master" method
         {
-            currentRobotAttackerIndex = ChooseWhoToAttackRobotPlayer();
-            currentDinoDefenderIndex = AttackDino();
+            ChooseWhoToAttackRobotPlayer();
+            AttackDino();
             IsDeadCheck();
             // call your method that lets a robo attack a dino
             // call your check it dead
 
-            currentDinoAttackerIndex = ChooseWhoToAttackDinoPlayer();
-            currentRobotDefenderIndex = AttackRobot();
+            ChooseWhoToAttackDinoPlayer();
+            AttackRobot();
             IsDeadCheck();
             // call your method that lets a dino attack a robo
             // call your check it dead
-
-
-
+            //theHerd.theHerd[0].AttackRobot(theFleet.theFleet[0]);
 
         }
 
-        public int ChooseWhoToAttackRobotPlayer()
+        public void ChooseWhoToAttackRobotPlayer()
         {
             Console.WriteLine("Choose your attacker!");
             int result = theFleet.DisplayRobotInfo();
@@ -56,23 +55,22 @@ namespace RobovDino
                 currentRobotAttackerIndex = result;
 
                 Console.WriteLine("Choose who to attack!");
-                int defender = theHerd.DisplayDinoInfo();
+                currentDinoDefenderIndex =  theHerd.DisplayDinoInfo();
                 
-                theHerd.VerifyChoiceMessageDino(defender);
+                //theHerd.VerifyChoiceMessageDino(defender);
 
-                return defender;
+               
                 
             }
             else
             {
-                Console.WriteLine(theFleet.DisplayRobotInfo());
-                int defenderChoice = int.Parse(Console.ReadLine());
-                return defenderChoice;
+                Console.WriteLine("invalid");
+                ChooseWhoToAttackRobotPlayer();
             }
         }
                 
                 
-        public int ChooseWhoToAttackDinoPlayer()
+        public void ChooseWhoToAttackDinoPlayer()
         {
             
             Console.WriteLine("Choose your attacker!");
@@ -84,18 +82,18 @@ namespace RobovDino
                 currentDinoAttackerIndex = result;
 
                 Console.WriteLine("Choose who to attack!: ");
-                int defender = theFleet.DisplayRobotInfo();
+                currentRobotDefenderIndex = theFleet.DisplayRobotInfo();
 
-                theFleet.VerifyChoiceMessageRobo(defender);
+                //theFleet.VerifyChoiceMessageRobo(defender);
                 
-                return defender;
+                
 
             }
             else
             {
-                Console.WriteLine(theFleet.DisplayRobotInfo());
-                int defenderChoice = int.Parse(Console.ReadLine());
-                return defenderChoice;
+                Console.WriteLine("invalid");
+                ChooseWhoToAttackDinoPlayer();
+                //return defenderChoice;
             }
         }
                 
@@ -105,8 +103,8 @@ namespace RobovDino
             if (theHerd.theHerd[currentDinoDefenderIndex].health > 0)
             {
                 theHerd.theHerd[currentDinoDefenderIndex].health -= theFleet.theFleet[currentRobotAttackerIndex].powerLevel;
-                int thestuff1 = theHerd.theHerd[currentDinoDefenderIndex].health;
-                return thestuff1;
+                return theHerd.theHerd[currentDinoDefenderIndex].health;
+                
             }   
             else
             {
@@ -118,8 +116,8 @@ namespace RobovDino
             if (theFleet.theFleet[currentRobotDefenderIndex].health > 0)
             {
                 theFleet.theFleet[currentRobotDefenderIndex].health -= theHerd.theHerd[currentDinoAttackerIndex].attackPower;
-                int thestuff = theFleet.theFleet[currentRobotDefenderIndex].health;
-                return thestuff;
+                return theFleet.theFleet[currentRobotDefenderIndex].health;
+                
             }
             else
             {

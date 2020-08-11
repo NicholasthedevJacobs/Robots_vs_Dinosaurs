@@ -27,8 +27,10 @@ namespace RobovDino
 
         }
         //member methods
-        public void AttackRobot()
+        public void AttackRobot(Robot robot)
         {
+            Herd theHerd = new Herd();
+            
 
         }
 
