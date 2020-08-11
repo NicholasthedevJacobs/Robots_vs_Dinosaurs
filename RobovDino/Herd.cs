@@ -27,7 +27,7 @@ namespace RobovDino
         //member methods
         public int DisplayDinoInfo()
         {
-            //Console.WriteLine("Choose your attacker!");
+            
             if (theHerd.Count > 0)
             {
                 Console.WriteLine("Press 1: to choose " + theHerd[0].type);
@@ -51,20 +51,20 @@ namespace RobovDino
             }
 
             return int.Parse(Console.ReadLine()) - 1;
-
-
-
         }
         public void VerifyChoiceMessageDino(int nameOfChosenDino)
         {
-            //int nameOfChosenDino = DisplayDinoInfo();
+            
             Console.WriteLine($"Great choice commander! You have chosen the {theHerd[nameOfChosenDino].type}!");
-            //Console.ReadLine();
+            
         }
 
                 
     }
 }
+
+
+
                 
 
 

@@ -24,15 +24,15 @@ namespace RobovDino
             this.health = health;
             this.powerLevel = powerLevel;
             
-
-            //Robot robot = new Robot(name, health, powerLevel, weapon);
             Weapon particleCannon = new Weapon();
             Weapon antiLizardSpray = new Weapon();
             Weapon freshMeat = new Weapon();
         }
         //member methods
-
-
-
     }
 }
+
+
+
+
+            

@@ -29,7 +29,7 @@ namespace RobovDino
         //member methods
         public int DisplayRobotInfo()
         {
-            //Console.WriteLine("Choose your attacker!");
+            
             if (theFleet.Count > 0)
             {
                 Console.WriteLine("Press 1: to choose " + theFleet[0].name);
@@ -61,7 +61,7 @@ namespace RobovDino
         {
             
             Console.WriteLine($"Great choice commander, you have chosen {theFleet[nameOfChosenRobot].name}: ");
-            //Console.ReadLine();
+           
         }
         public void ChooseDinosaurEnemy(string name)
         {
