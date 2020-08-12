@@ -25,12 +25,10 @@ namespace RobovDino
         //member methods
         public void DoBattle() // "master" method
         {
-            if (theHerd.theHerd.Count == 0 || theFleet.theFleet.Count == 0)
-            {
-                Console.WriteLine("Game over!");
-            }
+           
             while (theHerd.theHerd.Count > 0 && theFleet.theFleet.Count > 0)
             {
+
                 ChooseWhoToAttackRobotPlayer();
                 AttackDino();
                 IsDeadCheck();
